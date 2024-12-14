@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz List</title>
+</head>
+<body>
+    <h1>Available Quizzes</h1>
+    <ul>
+        {% for quiz in quizzes %}
+            <li><a href="{% url 'take_quiz' quiz.id %}">{{ quiz.name }}</a></li>
+        {% empty %}
+            <li>No quizzes available.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_quiz' %}">Create a New Quiz</a>
+</body>
+</html>

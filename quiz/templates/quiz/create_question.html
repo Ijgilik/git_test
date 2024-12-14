@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Question for {{ quiz.name }}</title>
+</head>
+<body>
+    <h1>Create a New Question for "{{ quiz.name }}"</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Question</button>
+    </form>
+
+    <a href="{% url 'create_quiz' %}">Back to Quiz List</a>
+</body>
+</html>
+

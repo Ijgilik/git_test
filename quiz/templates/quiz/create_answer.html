@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Answer for Question "{{ question.text }}"</title>
+</head>
+<body>
+    <h1>Create a New Answer for Question: "{{ question.text }}"</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Answer</button>
+    </form>
+
+    <a href="{% url 'create_question' quiz_id=question.quiz.id %}">Back to Question</a>
+</body>
+</html>
